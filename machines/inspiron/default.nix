@@ -15,6 +15,7 @@
     <nixos-hardware/dell/inspiron/7460>
     ./hardware-configuration.nix
     ../../modules/packages.nix
+    ../../modules/network.nix
     ../../modules/users.nix
     ../../modules/shell.nix
     ../../modules/vm.nix
@@ -23,6 +24,8 @@
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
+    ../../modules/tailscale.nix
+    ../../modules/mihomo.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -37,18 +40,10 @@
   #};
 
   networking.hostName = "inspiron"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-
   networking.hostId = "f97cc174";
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "zh_CN.UTF-8";
@@ -75,25 +70,10 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.channel = "https://channels.nixos.org/nixos-24.05";
 
-  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  #hardware.nvidia.modesetting.enable = true;
-  #services.xserver.videoDrivers = [ "nvidia" ];
-
-  #boot.kernelParams = [ "intel_iommu=on" ];
-  #boot.blacklistedKernelModules = [ "nvidia" "nouveau" ];
-  #boot.kernelModules = [ "kvm-amd" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
-  #boot.extraModprobeConfig = "options vfio-pci ids=10de:134d";
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
