@@ -67,8 +67,13 @@
 
   programs.nix-ld.enable = true;
 
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-24.05";
+  system.autoUpgrade = {
+    enable = true;
+    flags = [
+      "-I"
+      "nixos-config=/home/laf/nixos-config/machines/inspiron"
+    ];
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
