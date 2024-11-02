@@ -12,7 +12,6 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    <nixos-hardware/dell/inspiron/7460>
     ./hardware-configuration.nix
     ../../modules/packages.nix
     ../../modules/network.nix
@@ -24,8 +23,9 @@
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
-    ../../modules/tailscale.nix
-    ../../modules/mihomo.nix
+    ../../modules/fonts.nix
+    #../../modules/tailscale.nix
+    #../../modules/mihomo.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -39,42 +39,8 @@
   #  mirroredBoots = [{devices = ["nodev"]; path = "/boot";}];
   #};
 
-  networking.hostName = "inspiron"; # Define your hostname.
-  networking.hostId = "f97cc174";
-
-  networking.networkmanager.ensureProfiles.profiles = {
-    Tsinghua-Secure = {
-      "802-1x" = {
-        eap = "peap;";
-        identity = "laf21@tsinghua";
-        password-flags = "1";
-        phase1-auth-flags = "32";
-        phase2-auth = "mschapv2";
-      };
-      connection = {
-        id = "Tsinghua-Secure";
-        permissions = "user:laf:;";
-        timestamp = "1730182198";
-        type = "wifi";
-        uuid = "e4f946f6-61d7-4238-b9d3-e34057964db9";
-      };
-      ipv4 = {
-        method = "auto";
-      };
-      ipv6 = {
-        addr-gen-mode = "stable-privacy";
-        method = "auto";
-      };
-      proxy = { };
-      wifi = {
-        mode = "infrastructure";
-        ssid = "Tsinghua-Secure";
-      };
-      wifi-security = {
-        key-mgmt = "wpa-eap";
-      };
-    };
-  };
+  networking.hostName = "legion"; # Define your hostname.
+  networking.hostId = "8425e349";
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
@@ -88,6 +54,8 @@
   # };
 
   hardware.opengl.enable = true;
+
+  environment.systemPackages = with pkgs; [ open-vm-tools ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -105,7 +73,7 @@
     enable = true;
     flags = [
       "-I"
-      "nixos-config=/home/laf/nixos-config/machines/inspiron"
+      "nixos-config=/home/laf/nixos-config/machines/legion"
     ];
   };
 

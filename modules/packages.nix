@@ -11,6 +11,8 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     wget
+    wezterm
+    clash-verge-rev
     microsoft-edge
     qq
     telegram-desktop
@@ -28,6 +30,7 @@
     nixd
     nixfmt-rfc-style
     apptainer
+    plasma-browser-integration
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

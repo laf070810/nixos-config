@@ -11,6 +11,6 @@
   users.users.laf = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    hashedPasswordFile = "/home/laf/secrets/hashed_password.txt";
+    hashedPasswordFile = "/root/secrets/hashed_password/laf.txt";
   };
 }
