@@ -23,6 +23,7 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
+      cascadia-code
     ];
     fontconfig = {
       defaultFonts = {
