@@ -24,6 +24,7 @@
       dina-font
       proggyfonts
       cascadia-code
+      corefonts
     ];
     fontconfig = {
       defaultFonts = {
