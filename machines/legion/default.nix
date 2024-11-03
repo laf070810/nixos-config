@@ -54,7 +54,7 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   environment.systemPackages = with pkgs; [ open-vm-tools ];
 
