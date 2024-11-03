@@ -16,8 +16,6 @@
     microsoft-edge
     qq
     telegram-desktop
-    zotero
-    joplin
     libreoffice
     zoom-us
     vlc
@@ -33,6 +31,10 @@
     wineWowPackages.stable
     winetricks
     nmap
+    joplin-desktop
+    zotero_7
+    obs-studio
+    signal-desktop
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
