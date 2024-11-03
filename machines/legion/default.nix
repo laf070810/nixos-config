@@ -25,7 +25,8 @@
     ../../modules/audio.nix
     ../../modules/fonts.nix
     ../../modules/wireshark.nix
-    #../../modules/tailscale.nix
+    ../../modules/tailscale.nix
+    ../../modules/openvpn.nix
     #../../modules/mihomo.nix
   ];
 

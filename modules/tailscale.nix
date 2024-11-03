@@ -13,6 +13,6 @@
       "--accept-routes=true"
       "--accept-dns=true"
     ];
-    authKeyFile = "/home/laf/secrets/ts_preauth_key.txt";
+    authKeyFile = "/root/secrets/ts_preauth_key.txt";
   };
 }

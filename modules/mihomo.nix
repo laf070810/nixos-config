@@ -7,6 +7,6 @@
 {
   services.mihomo = {
     enable = true;
-    configFile = "/home/laf/secrets/mihomo-config-server.yml";
+    configFile = "/root/secrets/mihomo-config-server.yml";
   };
 }
