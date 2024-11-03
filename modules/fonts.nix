@@ -25,19 +25,26 @@
       proggyfonts
       cascadia-code
       corefonts
+      wqy_zenhei
+      wqy_microhei
     ];
     fontconfig = {
       defaultFonts = {
         sansSerif = [
+          "Liberation Sans"
           "Noto Sans CJK SC"
           "Source Han Sans SC"
           "DejaVu Sans"
+          "WenQuanYi Zen Hei"
         ];
         serif = [
+          "Liberation Serif"
           "Noto Serif CJK SC"
           "Source Han Serif SC"
           "DejaVu Serif"
+          "WenQuanYi Zen Hei"
         ];
+        monospace = [ "Cascadia Code" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

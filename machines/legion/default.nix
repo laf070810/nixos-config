@@ -24,6 +24,7 @@
     ../../modules/ssh.nix
     ../../modules/audio.nix
     ../../modules/fonts.nix
+    ../../modules/wireshark.nix
     #../../modules/tailscale.nix
     #../../modules/mihomo.nix
   ];
