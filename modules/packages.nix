@@ -33,7 +33,6 @@
     nmap
     joplin-desktop
     zotero_7
-    obs-studio
     signal-desktop
     seafile-client
   ];
@@ -49,4 +48,6 @@
     enable = true;
     openDefaultPorts = true;
   };
+
+  services.flatpak.enable = true;
 }

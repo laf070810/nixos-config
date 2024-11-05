@@ -27,6 +27,7 @@
     ../../modules/wireshark.nix
     ../../modules/tailscale.nix
     ../../modules/openvpn.nix
+    ../../modules/obs-studio.nix
     #../../modules/mihomo.nix
   ];
 
