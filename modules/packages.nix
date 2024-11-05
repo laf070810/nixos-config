@@ -35,6 +35,7 @@
     zotero_7
     signal-desktop
     seafile-client
+    unar
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -49,5 +50,12 @@
     openDefaultPorts = true;
   };
 
+  programs.thunderbird.enable = true;
+
   services.flatpak.enable = true;
+  # use flatpak in nixos-24.05 to avoid ostree/libcurl bug in the new flatpak
+  nixpkgs.config.packageOverrides = pkgs: {
+    nixos2405 = import <nixos-24.05> { config = config.nixpkgs.config; };
+  };
+  services.flatpak.package = pkgs.nixos2405.flatpak;
 }
