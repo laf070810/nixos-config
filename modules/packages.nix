@@ -14,7 +14,6 @@
     wezterm
     clash-verge-rev
     microsoft-edge
-    qq
     telegram-desktop
     libreoffice
     zoom-us
@@ -58,4 +57,14 @@
     nixos2405 = import <nixos-24.05> { config = config.nixpkgs.config; };
   };
   services.flatpak.package = pkgs.nixos2405.flatpak;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [
+        pkgs.bzip2
+      ];
+    };
+  };
 }
