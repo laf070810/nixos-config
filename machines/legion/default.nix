@@ -60,6 +60,19 @@
 
   environment.systemPackages = with pkgs; [ open-vm-tools ];
 
+  services.autofs = {
+    enable = true;
+    autoMaster =
+      let
+        mapConf = pkgs.writeText "auto" ''
+          /home/laf/data -fstype=ntfs,uid=1000,gid=100,dmask=022,fmask=133 UUID=A4F6645BF6642FAA
+        '';
+      in
+      ''
+        /- file:${mapConf}
+      '';
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
