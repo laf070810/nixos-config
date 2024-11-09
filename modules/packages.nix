@@ -34,6 +34,7 @@
     signal-desktop
     seafile-client
     unar
+    rustdesk-flutter
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
