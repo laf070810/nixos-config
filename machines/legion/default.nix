@@ -28,6 +28,7 @@
     ../../modules/tailscale.nix
     ../../modules/openvpn.nix
     ../../modules/obs-studio.nix
+    ../../modules/htop.nix
     #../../modules/mihomo.nix
   ];
 

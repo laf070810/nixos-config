@@ -20,7 +20,6 @@
     vlc
     vscode-fhs
     qbittorrent
-    htop
     btop
     pciutils
     lshw
