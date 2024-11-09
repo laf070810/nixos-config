@@ -93,6 +93,80 @@
     ];
   };
 
+  services.syncthing = {
+    user = "laf";
+    group = "users";
+    cert = "/root/secrets/syncthing/cert.pem";
+    key = "/root/secrets/syncthing/key.pem";
+    dataDir = "/home/laf/syncthing-config";
+    configDir = "/home/laf/syncthing-config";
+    overrideDevices = true;
+    overrideFolders = true;
+    settings = {
+      devices = {
+        "alpha" = {
+          id = "VEPBG5B-OBYAMSY-G5PEMJZ-T74ODGY-36ACH45-QDZ6F2O-6GLYOJU-3YMGGQ5";
+        };
+        "hepfarm41" = {
+          id = "QQ6IELW-BZ334EH-RLYSTEE-HYIYJZE-VYRWVJU-LZLHPDU-D2IWPY6-YQVRPA2";
+        };
+        "mbp" = {
+          id = "LDOOZFY-V5TJBS6-S3M2GON-U76VFH4-RW25DV4-LX37CXF-536TJP7-B6Q4JQC";
+        };
+        "tab" = {
+          id = "XD53RNY-4ODUXVH-LYPRSGY-4MAJ7NC-2PDNRKF-BZJDFL4-JNUHP5X-FQLVLA7";
+        };
+        "mi11u" = {
+          id = "KPPLCSD-VULISYP-WE5MKDA-VX3HX6Q-JZBQRDA-LHQVRDS-NEISFMG-RRQHZAM";
+        };
+      };
+      folders = {
+        "default" = {
+          id = "default";
+          path = "/home/laf/Sync";
+          devices = [
+            "alpha"
+            "hepfarm41"
+            "mbp"
+            "tab"
+            "mi11u"
+          ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+        "data" = {
+          id = "data";
+          path = "/home/laf/data/data";
+          devices = [
+            "alpha"
+            "hepfarm41"
+          ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+        "zotero-storage" = {
+          id = "zotero-storage";
+          path = "/home/laf/Zotero/storage";
+          devices = [
+            "alpha"
+            "mbp"
+            "tab"
+            "mi11u"
+          ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+      };
+    };
+  };
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.

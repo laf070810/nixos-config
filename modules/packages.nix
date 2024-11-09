@@ -31,7 +31,7 @@
     winetricks
     nmap
     joplin-desktop
-    zotero_7
+    zotero
     signal-desktop
     seafile-client
     unar
