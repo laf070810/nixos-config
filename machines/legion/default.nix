@@ -61,18 +61,30 @@
 
   environment.systemPackages = with pkgs; [ open-vm-tools ];
 
-  services.autofs = {
-    enable = true;
-    autoMaster =
-      let
-        mapConf = pkgs.writeText "auto" ''
-          /home/laf/data -fstype=ntfs,uid=1000,gid=100,dmask=022,fmask=133 UUID=A4F6645BF6642FAA
-        '';
-      in
-      ''
-        /- file:${mapConf}
-      '';
-  };
+  # Mount USB data drive on boot
+  # fileSystems."/home/laf/data" = {
+  #   device = "/dev/disk/by-uuid/A4F6645BF6642FAA";
+  #   fsType = "ntfs-3g";
+  #   options = [
+  #     "rw"
+  #     "uid=1000"
+  #     "gid=100"
+  #     "dmask=022"
+  #     "fmask=133"
+  #   ];
+  # };
+  # services.autofs = {
+  #   enable = true;
+  #   autoMaster =
+  #     let
+  #       mapConf = pkgs.writeText "auto" ''
+  #         /home/laf/data -fstype=ntfs,uid=1000,gid=100,dmask=022,fmask=133 UUID=A4F6645BF6642FAA
+  #       '';
+  #     in
+  #     ''
+  #       /- file:${mapConf}
+  #     '';
+  # };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -137,12 +149,23 @@
             params.keep = "5";
           };
         };
-        "data" = {
-          id = "data";
-          path = "/home/laf/data/data";
+        "main" = {
+          id = "main";
+          path = "/data/laf/Main";
           devices = [
             "alpha"
-            "hepfarm41"
+            "mbp"
+          ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+        "project" = {
+          id = "project";
+          path = "/data/laf/Projects";
+          devices = [
+            "alpha"
           ];
           versioning = {
             type = "simple";
