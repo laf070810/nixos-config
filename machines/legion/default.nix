@@ -59,7 +59,10 @@
 
   hardware.graphics.enable = true;
 
-  environment.systemPackages = with pkgs; [ open-vm-tools ];
+  environment.systemPackages = with pkgs; [
+    open-vm-tools
+    cifs-utils
+  ];
 
   # Mount USB data drive on boot
   # fileSystems."/home/laf/data" = {
@@ -85,6 +88,20 @@
   #       /- file:${mapConf}
   #     '';
   # };
+
+  # Mount SMB share
+  services.autofs = {
+    enable = true;
+    autoMaster =
+      let
+        mapConf = pkgs.writeText "auto" ''
+          /home/laf/data -fstype=cifs,uid=1000,gid=100,dir_mode=0755,file_mode=0644,credentials=/root/secrets/smb/alpha.txt ://alpha/data
+        '';
+      in
+      ''
+        /- file:${mapConf}
+      '';
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
