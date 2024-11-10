@@ -13,12 +13,9 @@
     wget
     wezterm
     clash-verge-rev
-    microsoft-edge
     telegram-desktop
     libreoffice
-    zoom-us
     vlc
-    vscode-fhs
     qbittorrent
     btop
     pciutils
@@ -35,6 +32,10 @@
     seafile-client
     unar
     rustdesk-flutter
+
+    microsoft-edge
+    zoom-us
+    vscode-fhs
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
