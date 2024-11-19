@@ -6,6 +6,12 @@
 }:
 
 {
+  nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    nixos2405 = import <nixos-24.05> { config = config.nixpkgs.config; };
+  };
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -31,7 +37,7 @@
     signal-desktop
     seafile-client
     unar
-    rustdesk-flutter
+    nixos2405.rustdesk-flutter # temporarily broken in unstable
 
     microsoft-edge
     zoom-us
@@ -53,11 +59,7 @@
   programs.thunderbird.enable = true;
 
   services.flatpak.enable = true;
-  # use flatpak in nixos-24.05 to avoid ostree/libcurl bug in the new flatpak
-  nixpkgs.config.packageOverrides = pkgs: {
-    nixos2405 = import <nixos-24.05> { config = config.nixpkgs.config; };
-  };
-  services.flatpak.package = pkgs.nixos2405.flatpak;
+  services.flatpak.package = pkgs.flatpak;
 
   programs.appimage = {
     enable = true;
