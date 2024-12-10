@@ -37,6 +37,12 @@
     signal-desktop
     seafile-client
     unar
+    parted
+    dig
+    whois
+    openssl
+    nssTools
+    fastfetch
     nixos2405.rustdesk-flutter # temporarily broken in unstable
 
     microsoft-edge
