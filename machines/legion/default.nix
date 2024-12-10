@@ -29,6 +29,7 @@
     ../../modules/openvpn.nix
     ../../modules/obs-studio.nix
     ../../modules/htop.nix
+    ../../modules/cern-ca/cern-ca.nix
     #../../modules/mihomo.nix
   ];
 
