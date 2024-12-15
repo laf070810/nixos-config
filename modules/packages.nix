@@ -43,10 +43,9 @@
     openssl
     nssTools
     fastfetch
-    nixos2405.rustdesk-flutter # temporarily broken in unstable
+    rustdesk-flutter # temporarily broken in unstable
 
     microsoft-edge
-    zoom-us
     vscode-fhs
   ];
   # Some programs need SUID wrappers, can be configured further or are
