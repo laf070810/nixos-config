@@ -211,6 +211,14 @@
 
   services.displayManager.defaultSession = "plasmax11";
 
+  services.xserver.xrandrHeads = [
+    {
+      output = "Virtual-1";
+      monitorConfig = "ModeLine \"2560x1440\"  241.500   2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync";
+      primary = true;
+    }
+  ];
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
