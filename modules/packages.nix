@@ -9,7 +9,7 @@
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    nixos2405 = import <nixos-24.05> { config = config.nixpkgs.config; };
+    nixos2411 = import <nixos-24.11> { config = config.nixpkgs.config; };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -18,7 +18,7 @@
     git
     wget
     wezterm
-    clash-verge-rev
+    nixos2411.clash-verge-rev
     telegram-desktop
     libreoffice
     vlc
