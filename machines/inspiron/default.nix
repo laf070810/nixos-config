@@ -46,7 +46,7 @@
     Tsinghua-Secure = {
       "802-1x" = {
         eap = "peap;";
-        identity = "laf21@tsinghua";
+        identity = "laf21";
         password-flags = "1";
         phase1-auth-flags = "32";
         phase2-auth = "mschapv2";
@@ -87,7 +87,7 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
