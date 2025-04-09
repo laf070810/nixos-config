@@ -141,6 +141,9 @@
         "hepfarm41" = {
           id = "QQ6IELW-BZ334EH-RLYSTEE-HYIYJZE-VYRWVJU-LZLHPDU-D2IWPY6-YQVRPA2";
         };
+        "legion-win" = {
+          id = "PRO57NU-FS3WFAF-GDH6KGB-J4V7F52-GWVC6VK-I7R7B6Q-FFJEP6R-NM5UTQX";
+        };
         "mbp" = {
           id = "LDOOZFY-V5TJBS6-S3M2GON-U76VFH4-RW25DV4-LX37CXF-536TJP7-B6Q4JQC";
         };
@@ -158,6 +161,7 @@
           devices = [
             "alpha"
             "hepfarm41"
+            "legion-win"
             "mbp"
             "tab"
             "mi11u"
