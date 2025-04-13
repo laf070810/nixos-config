@@ -18,7 +18,7 @@
     git
     wget
     wezterm
-    nixos2411.clash-verge-rev
+    clash-verge-rev
     telegram-desktop
     libreoffice
     vlc
@@ -34,7 +34,7 @@
     nmap
     joplin-desktop
     zotero
-    signal-desktop
+    signal-desktop-bin
     seafile-client
     unar
     parted
@@ -43,7 +43,7 @@
     openssl
     nssTools
     fastfetch
-    rustdesk-flutter # temporarily broken in unstable
+    nixos2411.rustdesk-flutter # temporarily broken in unstable
 
     microsoft-edge
     vscode-fhs
