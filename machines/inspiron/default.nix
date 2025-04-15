@@ -109,6 +109,12 @@
     ];
   };
 
+  users.users.liujx = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    hashedPasswordFile = "/root/secrets/hashed_passwords/liujx.txt";
+  };
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
