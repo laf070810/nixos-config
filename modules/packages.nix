@@ -43,7 +43,7 @@
     openssl
     nssTools
     fastfetch
-    nixos2411.rustdesk-flutter # temporarily broken in unstable
+    rustdesk-flutter
 
     microsoft-edge
     vscode-fhs
