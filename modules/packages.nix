@@ -44,6 +44,7 @@
     nssTools
     fastfetch
     rustdesk-flutter
+    musescore
 
     microsoft-edge
     vscode-fhs
