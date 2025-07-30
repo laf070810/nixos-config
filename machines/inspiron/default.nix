@@ -24,7 +24,10 @@
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/audio.nix
+    ../../modules/wireshark.nix
     ../../modules/tailscale.nix
+    ../../modules/obs-studio.nix
+    ../../modules/htop.nix
     ../../modules/mihomo.nix
   ];
 
@@ -41,40 +44,6 @@
 
   networking.hostName = "inspiron"; # Define your hostname.
   networking.hostId = "f97cc174";
-
-  networking.networkmanager.ensureProfiles.profiles = {
-    Tsinghua-Secure = {
-      "802-1x" = {
-        eap = "peap;";
-        identity = "laf21";
-        password-flags = "1";
-        phase1-auth-flags = "32";
-        phase2-auth = "mschapv2";
-      };
-      connection = {
-        id = "Tsinghua-Secure";
-        permissions = "user:laf:;";
-        timestamp = "1730182198";
-        type = "wifi";
-        uuid = "e4f946f6-61d7-4238-b9d3-e34057964db9";
-      };
-      ipv4 = {
-        method = "auto";
-      };
-      ipv6 = {
-        addr-gen-mode = "stable-privacy";
-        method = "auto";
-      };
-      proxy = { };
-      wifi = {
-        mode = "infrastructure";
-        ssid = "Tsinghua-Secure";
-      };
-      wifi-security = {
-        key-mgmt = "wpa-eap";
-      };
-    };
-  };
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
