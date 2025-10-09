@@ -9,10 +9,13 @@
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    nixos2411 = import <nixos-24.11> { config = config.nixpkgs.config; };
+    nixos2505 = import <nixos-25.05> { config = config.nixpkgs.config; };
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebengine-5.15.19"
+  ];
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
@@ -35,7 +38,7 @@
     joplin-desktop
     zotero
     signal-desktop-bin
-    seafile-client
+    nixos2505.seafile-client # temporarily broken in unstable
     unar
     parted
     dig
