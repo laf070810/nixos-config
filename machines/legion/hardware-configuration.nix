@@ -29,6 +29,7 @@
   fileSystems."/" = {
     device = "nixos";
     fsType = "zfs";
+    options = [ "zfsutil" ];
   };
 
   fileSystems."/boot" = {
