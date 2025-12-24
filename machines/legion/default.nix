@@ -194,6 +194,17 @@
             params.keep = "5";
           };
         };
+        "legion-linux" = {
+          id = "legion-linux";
+          path = "/home/laf";
+          devices = [
+            "alpha"
+          ];
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
         "zotero-storage" = {
           id = "zotero-storage";
           path = "/home/laf/Zotero/storage";
