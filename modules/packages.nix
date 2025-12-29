@@ -9,7 +9,7 @@
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    nixos2505 = import <nixos-25.05> { config = config.nixpkgs.config; };
+    nixos2505 = import <nixos2505> { config = config.nixpkgs.config; };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -38,7 +38,7 @@
     joplin-desktop
     zotero
     signal-desktop-bin
-    nixos2505.seafile-client # temporarily broken in unstable
+    seafile-client
     unar
     parted
     dig

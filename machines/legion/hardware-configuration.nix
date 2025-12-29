@@ -32,6 +32,31 @@
     options = [ "zfsutil" ];
   };
 
+  fileSystems."/var" = {
+    device = "nixos/var";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
+  };
+
+  fileSystems."/root" = {
+    device = "nixos/root";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
+    neededForBoot = true; # needed to load user passwords
+  };
+
+  fileSystems."/home" = {
+    device = "nixos/home";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
+  };
+
+  fileSystems."/data" = {
+    device = "nixos/data";
+    fsType = "zfs";
+    options = [ "zfsutil" ];
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/A677-1064";
     fsType = "vfat";
