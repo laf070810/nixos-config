@@ -30,6 +30,7 @@
     ../../modules/obs-studio.nix
     ../../modules/htop.nix
     ../../modules/cern-ca/cern-ca.nix
+    ../../modules/sanoid.nix
     #../../modules/mihomo.nix
   ];
 
@@ -223,6 +224,36 @@
     };
   };
   systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
+
+  services.syncoid = {
+    enable = true;
+    interval = "minutely";
+    commonArgs = [
+      "--no-sync-snap"
+    ];
+    commands = {
+      "nixos/root" = {
+        source = "nixos/root";
+        target = "laf@alpha:data/backups/legion-linux/nixos/root";
+        sendOptions = "w";
+      };
+      "nixos/home" = {
+        source = "nixos/home";
+        target = "laf@alpha:data/backups/legion-linux/nixos/home";
+        sendOptions = "w";
+      };
+      "nixos/var" = {
+        source = "nixos/var";
+        target = "laf@alpha:data/backups/legion-linux/nixos/var";
+        sendOptions = "w";
+      };
+      "nixos/data" = {
+        source = "nixos/data";
+        target = "laf@alpha:data/backups/legion-linux/nixos/data";
+        sendOptions = "w";
+      };
+    };
+  };
 
   services.displayManager.defaultSession = "plasmax11";
 
