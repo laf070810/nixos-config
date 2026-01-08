@@ -30,7 +30,7 @@
     pciutils
     lshw
     nixd
-    nixfmt-rfc-style
+    nixfmt
     apptainer
     wineWowPackages.stable
     winetricks
@@ -48,6 +48,7 @@
     fastfetch
     rustdesk-flutter
     musescore
+    stellarium
 
     microsoft-edge
     vscode-fhs
