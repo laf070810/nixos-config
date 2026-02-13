@@ -32,7 +32,7 @@
     nixd
     nixfmt
     apptainer
-    wineWowPackages.stable
+    wineWow64Packages.stable
     winetricks
     nmap
     joplin-desktop
