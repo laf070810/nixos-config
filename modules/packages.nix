@@ -49,6 +49,7 @@
     rustdesk-flutter
     musescore
     stellarium
+    android-tools
 
     microsoft-edge
     vscode-fhs
