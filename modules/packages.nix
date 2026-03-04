@@ -37,7 +37,7 @@
     nmap
     joplin-desktop
     zotero
-    signal-desktop-bin
+    signal-desktop
     seafile-client
     unar
     parted
