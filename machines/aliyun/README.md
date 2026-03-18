@@ -4,4 +4,5 @@
 - Run `nixos-anywhere` to deploy the system, e.g. `nix run --experimental-features 'nix-command flakes' github:nix-community/nixos-anywhere -- --generate-hardware-config nixos-generate-config ./hardware-configuration.nix --flake .#aliyun --target-host root@<>IP_ADDRESS>`
 - Enjoy the new system!
 - Switch to new configuration by running `nixos-rebuild --flake .#aliyun --target-host root@aliyun switch` on the local machine instead of `aliyun`
+- Update the system by running `nix flake update --experimental-features 'nix-command flakes'` and then rebuilding the system as mentioned above
 - References: <https://www.reddit.com/r/NixOS/comments/1nmwswt/does_nixosanywhere_work_with_zfs/>, <https://wiki.nixos.org/wiki/NixOS_system_configuration#Defining_NixOS_as_a_flake>, <https://wiki.nixos.org/wiki/Flakes>
