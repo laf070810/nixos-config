@@ -1,0 +1,7 @@
+- Prepare `flake.nix`, `configuration.nix` and `disk-config.nix` according to the [docs](https://github.com/nix-community/nixos-anywhere/blob/main/docs/quickstart.md)
+- Lock the Flake
+- (optional) Set up proxy by using remote SSH port forwarding, e.g. `ssh -R 7890:localhost:7890 root@<IP_ADDRESS>`, and modifying `.bashrc`, `.bash_profile` or `.zshenv` to export `http_proxy` and `https_proxy` environment variables
+- Run `nixos-anywhere` to deploy the system, e.g. `nix run --experimental-features 'nix-command flakes' github:nix-community/nixos-anywhere -- --generate-hardware-config nixos-generate-config ./hardware-configuration.nix --flake .#aliyun --target-host root@<>IP_ADDRESS>`
+- Enjoy the new system!
+- Switch to new configuration by running `nixos-rebuild --flake .#aliyun --target-host root@aliyun switch` on the local machine instead of `aliyun`
+- References: <https://www.reddit.com/r/NixOS/comments/1nmwswt/does_nixosanywhere_work_with_zfs/>, <https://wiki.nixos.org/wiki/NixOS_system_configuration#Defining_NixOS_as_a_flake>, <https://wiki.nixos.org/wiki/Flakes>
