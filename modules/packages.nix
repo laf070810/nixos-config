@@ -8,10 +8,6 @@
 {
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nixos2505 = import <nixos2505> { config = config.nixpkgs.config; };
-  };
-
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "qtwebengine-5.15.19"
@@ -52,7 +48,7 @@
     android-tools
 
     microsoft-edge
-    vscode-fhs
+    master.vscode-fhs
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
