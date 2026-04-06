@@ -46,6 +46,7 @@
     musescore
     stellarium
     android-tools
+    diffoscope
 
     microsoft-edge
     master.vscode-fhs
