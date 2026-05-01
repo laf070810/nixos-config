@@ -50,6 +50,7 @@
 
     microsoft-edge
     master.vscode-fhs
+    claude-code
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
