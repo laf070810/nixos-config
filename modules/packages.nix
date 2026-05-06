@@ -49,7 +49,7 @@
     pkgs-2511.diffoscope
 
     microsoft-edge
-    master.vscode-fhs
+    vscode-fhs
     claude-code
   ];
   # Some programs need SUID wrappers, can be configured further or are
