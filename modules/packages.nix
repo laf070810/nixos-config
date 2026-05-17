@@ -46,7 +46,7 @@
     musescore
     stellarium
     android-tools
-    pkgs-2511.diffoscope
+    diffoscope
 
     microsoft-edge
     vscode-fhs

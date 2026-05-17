@@ -193,7 +193,9 @@
           versioning = {
             type = "simple";
             params.keep = "5";
+            params.cleanoutDays = "7";
           };
+          ignorePatterns = [ "/containers/wljs/wljs/tmp" ];
         };
         "legion-linux" = {
           id = "legion-linux";
