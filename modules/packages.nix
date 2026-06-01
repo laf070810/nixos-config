@@ -47,6 +47,7 @@
     stellarium
     android-tools
     diffoscope
+    gimp
 
     microsoft-edge
     vscode-fhs
