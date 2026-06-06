@@ -48,6 +48,8 @@
     android-tools
     diffoscope
     gimp
+    ffmpeg-full
+    kdePackages.kdenlive
 
     microsoft-edge
     vscode-fhs
