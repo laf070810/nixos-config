@@ -25,6 +25,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.zfs.devNodes = "/dev/disk/by-partuuid";
+  boot.zfs.forceImportRoot = false;
 
   fileSystems."/" = {
     device = "nixos";

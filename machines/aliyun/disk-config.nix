@@ -53,4 +53,7 @@
       };
     };
   };
+
+  fileSystems."/root".neededForBoot = true;
+  boot.zfs.forceImportRoot = false;
 }
