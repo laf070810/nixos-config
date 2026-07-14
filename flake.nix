@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs-2511.url = "github:NixOS/nixpkgs/nixos-25.11";
+  inputs.nixpkgs-2605.url = "github:NixOS/nixpkgs/nixos-26.05";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.nixpkgs-master.url = "github:NixOS/nixpkgs";
   inputs.disko.url = "github:nix-community/disko";
@@ -7,7 +7,7 @@
 
   outputs =
     {
-      nixpkgs-2511,
+      nixpkgs-2605,
       nixpkgs,
       nixpkgs-master,
       disko,
@@ -20,7 +20,7 @@
           {
             nixpkgs.overlays = [
               (final: prev: {
-                pkgs-2511 = import nixpkgs-2511 {
+                pkgs-2605 = import nixpkgs-2605 {
                   inherit (final.stdenv.hostPlatform) system;
                 };
                 master = import nixpkgs-master {

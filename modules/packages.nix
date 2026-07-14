@@ -43,7 +43,7 @@
     nssTools
     fastfetch
     rustdesk-flutter
-    musescore
+    pkgs-2605.musescore
     stellarium
     android-tools
     diffoscope
