@@ -50,10 +50,10 @@
     gimp
     ffmpeg-full
     kdePackages.kdenlive
+    codex
 
     microsoft-edge
     vscode-fhs
-    claude-code
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
