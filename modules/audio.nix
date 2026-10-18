@@ -7,9 +7,11 @@
 
 {
   # Enable sound.
-  services.pulseaudio.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
-    enable = false;
-    pulse.enable = false;
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
   };
 }

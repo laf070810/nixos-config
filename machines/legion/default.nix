@@ -65,7 +65,10 @@
     cifs-utils
   ];
 
-  virtualisation.vmware.guest.enable = true;
+  virtualisation.vmware.guest = {
+    enable = true;
+    headless = false;
+  };
 
   # Mount USB data drive on boot
   # fileSystems."/home/laf/data" = {
