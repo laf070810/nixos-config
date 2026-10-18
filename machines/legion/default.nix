@@ -62,9 +62,10 @@
   hardware.graphics.enable = true;
 
   environment.systemPackages = with pkgs; [
-    open-vm-tools
     cifs-utils
   ];
+
+  virtualisation.vmware.guest.enable = true;
 
   # Mount USB data drive on boot
   # fileSystems."/home/laf/data" = {
@@ -256,16 +257,6 @@
       };
     };
   };
-
-  services.displayManager.defaultSession = "plasma";
-
-  services.xserver.xrandrHeads = [
-    {
-      output = "Virtual-1";
-      monitorConfig = "ModeLine \"2560x1440\"  241.500   2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync";
-      primary = true;
-    }
-  ];
 
   nix.settings.experimental-features = [
     "nix-command"
