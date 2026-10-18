@@ -10,7 +10,7 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "pnpm-9.15.9"
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
   ];
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -54,6 +54,7 @@
 
     microsoft-edge
     vscode-fhs
+    chatgpt
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

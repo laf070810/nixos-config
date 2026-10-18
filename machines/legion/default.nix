@@ -257,7 +257,7 @@
     };
   };
 
-  services.displayManager.defaultSession = "plasmax11";
+  services.displayManager.defaultSession = "plasma";
 
   services.xserver.xrandrHeads = [
     {
